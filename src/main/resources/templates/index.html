@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<ul>
+
+    <div class="container">
+        <div class="">
+            <h4 class="text-center">List Product</h4>
+            <table class="table" style="height: 500px;">
+                <thead class="table-info">
+                <tr  class="text-center">
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col" style="width: 10%">Description</th>
+                    <th scope="col">Date Of Manf</th>
+                    <th scope="col">Price</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr th:each="st: ${listProduct}" class="contentPage">
+                    <td scope="col" style="text-align: center" th:text="${st.prodID}">
+                    </td>
+                    <td scope="col" style="text-align: center" th:text="${st.prodName}">
+                    </td>
+                    <td scope="col" style="text-align: center" th:text="${st.description}">
+                    </td>
+                    <td scope="col" style="text-align: center" th:text="${st.dateOfManf}">
+                    </td>
+                    <td scope="col" style="text-align: center" th:text="${st.price}">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</ul>
+
+<ul>
+
+    <div class="container">
+        <div class="">
+            <h4 class="text-center">List Sale</h4>
+            <table class="table" style="height: 500px;">
+                <thead class="table-info">
+                <tr  class="text-center">
+                    <th scope="col">Mã</th>
+                    <th scope="col">SalesMan ID</th>
+                    <th scope="col" style="width: 10%">Product ID</th>
+                    <th scope="col">SalesMan Name</th>
+                    <th scope="col">Date Of Sale</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr th:each="st1: ${listSale}" class="contentPage">
+                    <td scope="col" style="text-align: center" th:text="${st1.slNo}">
+                    </td>
+                    <td scope="col" style="text-align: center" th:text="${st1.salesmanID}">
+                    </td>
+                    <td scope="col" style="text-align: center" th:text="${st1.product.prodID}">
+                    </td>
+                    <td scope="col" style="text-align: center" th:text="${st1.salesmanName}">
+                    </td>
+                    <td scope="col" style="text-align: center" th:text="${st1.DOS}">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</ul>
+
+</body>
+
+</html>
